@@ -5,13 +5,19 @@ public class ElectricCar extends Car {
 
     public ElectricCar() {
         super();
-        this.mEngineType = "Electric";
+        mEngineType = "Electric";
     }
 
     public ElectricCar(String model, String license, String color, int year,
                        String ownerName, String insuranceNumber, double batteryCapacity) {
         super(model, license, color, year, ownerName, insuranceNumber, "Electric");
         mBatteryCapacity = batteryCapacity;
+        mEngineType = "Electric";
+    }
+
+    @Override
+    public String vehicleType() {
+        return "Electric Car";
     }
 
     public double getBatteryCapacity() {
@@ -24,15 +30,7 @@ public class ElectricCar extends Car {
 
     @Override
     public String toString() {
-        return "ElectricCar{" +
-                "mModel='" + getModel() + '\'' +
-                ", mLicense='" + getLicense() + '\'' +
-                ", mColor='" + getColor() + '\'' +
-                ", mYear=" + getYear() +
-                ", mOwnerName='" + getOwnerName() + '\'' +
-                ", mInsuranceNumber='" + getInsuranceNumber() + '\'' +
-                ", mEngineType='" + mEngineType + '\'' +
-                ", mBatteryCapacity=" + mBatteryCapacity +
-                '}';
+        return "ElectricCar{" + super.toString() +
+                ", BatteryCapacity=" + mBatteryCapacity + " kWh}";
     }
 }
